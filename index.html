@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal of Applied Physics and Engineering</title>
+    <link rel="icon" href="th.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for icons -->
+</head>
+
+<body>
+    <header>
+        <div class="container" style="text-align: center;">
+            <div class="title-image">
+                <img src="th.jpeg" alt="Journal Logo" class="header-image">
+                <h1 style="margin: 0;">
+                    <i class="fas fa-atom" aria-label="Atom Icon"></i> Journal of Applied Physics and Engineering
+                </h1>
+                <p class="subtitle">Journal specialized in all scientific fields related to Physics and Engineering</p>
+            </div>
+        </div>
+        <!-- Search Field -->
+        <form action="#" method="GET" class="search-form" id="searchForm">
+            <input type="text" placeholder="Search for articles by name..." name="search" aria-label="Search"
+                id="searchInput">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Search Result Message -->
+        <div id="searchMessage" class="search-message"></div>
+
+        <script>
+            // Example array of articles with IDs
+            const articles = [
+                { title: "Understanding Quantum Mechanics", id: "UnderstandingQuantumMechanics" },
+                { title: "Applications of Nanotechnology in Engineering", id: "ApplicationsOfNanotechnology" },
+                { title: "Thermodynamics and Its Applications", id: "Thermodynamics" },
+                { title: "Advanced Materials for Engineering", id: "AdvancedMaterials" },
+                { title: "Graded-lattice", id: "Graded-lattice" }
+            ];
+
+            document.getElementById('searchForm').addEventListener('submit', function (event) {
+                event.preventDefault();  // Prevents form from actually submitting
+                const query = document.getElementById('searchInput').value.trim().toLowerCase(); // Get the search input
+
+                // Clear previous messages
+                document.getElementById('searchMessage').innerText = "";
+
+                if (query) {
+                    // Find matching articles
+                    const result = articles.find(article => article.title.toLowerCase().includes(query));
+
+                    if (result) {
+                        // Redirect to the article section if found
+                        window.location.href = `#${result.id}`;
+                    } else {
+                        // No results found
+                        document.getElementById('searchMessage').innerText = "No articles found matching: " + query;
+                    }
+                } else {
+                    document.getElementById('searchMessage').innerText = "Please enter an article name to search.";
+                }
+            });
+        </script>
+
+
+
+    </header>
+
+
+
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to the National Journal of Applied Physics</h2>
+            <p>The National Journal of Applied Physics aims to provide a platform for researchers and practitioners in
+                the field
+                of applied physics to share their discoveries and innovations. We publish peer-reviewed articles
+                covering a wide range of topics including, but not limited to:</p>
+            <ul>
+                <li>Quantum Mechanics</li>
+                <li>Optical Physics</li>
+                <li>Material Science</li>
+                <li>Nanotechnology</li>
+                <li>Semiconductor Physics</li>
+                <li>Photonic Devices</li>
+                <li>Thermodynamics</li>
+            </ul>
+            <p>Our mission is to advance the knowledge and understanding of applied physics through rigorous research
+                and scientific dialogue. We encourage submissions from both established and early-career researchers,
+                fostering an inclusive academic environment.</p>
+            <p>
+                <hr>
+            <ul>
+                <h2>Journal Articles:</h2>
+                <li>
+                    <!-- Article Sections -->
+                    <div id="articles">
+                        <h3 </h3>
+                            <p id="Graded-lattice"><a href="c5ra15890g.pdf" target="_blank">Graded-lattice AAO photonic
+                                    crystal
+                                    heterostructure for high Q refractive index sensing</a></p>
+                    </div>
+
+                </li>
+            </ul>
+            </p>
+        </div>
+    </section>
+    <!-- Fixed Left Sidebar -->
+    <div class="left-sidebar">
+        <h3>Journal Information</h3>
+        <ul>
+            <li><a href="index.html" onclick="changeContent('Type of Submission')">Main view</a></li>
+            <li><a href="submissiontype.html" onclick="changeContent('Type of Submission')">Type of Submission</a></li>
+            <li><a href="SubmissionProcess.html" onclick="changeContent('Submission Process')">Submission Process</a>
+            </li>
+            <li><a href="publications.html" onclick="changeContent('Publications Information')">Publications
+                    Information</a></li>
+            <li><a href="Editorialboard.html" onclick="changeContent('Editorial board')">Editorial board</a></li>
+            <li><a href="ourmission.html" onclick="changeContent('Our Mission')">Our Mission</a></li>
+        </ul>
+        <div id="sidebarContent">
+            <!-- Dynamic content will appear here -->
+            <p>Select an item to view more information.</p>
+        </div>
+    </div>
+    <!-- Fixed right Sidebar -->
+    <div class="right-sidebar">
+        <h3>Contact Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61567524715998" target="_blank"
+                    changeContent('Facebook')">Facebook</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VangZiS4inouMyRIy11C" target="_blank"
+                    onclick="changeContent('WhatsApp')">WhatsApp</a></li>
+            <li><a href="#" onclick="changeContent('linkedin')">linkedin</a></li>
+            <li><a href="#" onclick="changeContent('Email')">Email</a></li>
+        </ul>
+        <div id="sidebarContent">
+            <!-- Dynamic content will appear here -->
+            <p>Select an item to view more information.</p>
+        </div>
+    </div>
+
+    <hr>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Applied Physics C. All rights reserved.</p>
+        </div>
+        <button id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
