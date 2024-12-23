@@ -41,14 +41,7 @@
     color: blue;
 }
 
-#sidebarContent {
-    margin-top: 50px;
-    padding: 0px;
-    background-color: #c4d3d6;
-    border-radius: 5px;
-}
-
-/* Right Sidebar */
+/* Scrollable Right Sidebar */
 .right-sidebar {
     position: fixed;
     top: 165px;
@@ -89,37 +82,13 @@
     color: blue;
 }
 
-#sidebarContent {
-    margin-top: 50px;
-    padding: 50px;
-    background-color: #eaeaea;
-    border-radius: 5px;
-}
-
 /* Main Content Section Styling */
 .main-content {
     margin-left: 350px;
     padding: 10px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .left-sidebar, .right-sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border: none;
-        box-shadow: none;
-        margin-bottom: 15px;
-    }
-    
-    .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
-}
-
-/* General Styling */
+/* Other Global Styling */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
@@ -128,71 +97,136 @@ body {
     color: black;
 }
 
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Header styles */
 header {
     background: linear-gradient(135deg, #f7f305, #03f0e4, #b9f70f, #09cc54);
     color: black;
-    padding: 10px;
+    padding: 0px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Container */
 .container {
     width: 80%;
     margin: 0 auto;
 }
 
-/* Title Image */
+/* Align image and title side by side */
 .title-image {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0px;
 }
 
-/* Search Field */
+.title-image img {
+    max-width: 120px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    display: flex;
+    align-items: center;
+}
+
+/* Search field styles */
 .search-form {
     display: flex;
     justify-content: right;
     margin-top: 0;
 }
 
-/* Section Padding */
+.search-form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 5px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+/* Adjust section padding to avoid content hiding behind fixed header */
 section {
     padding: 185px 0 100px;
     font-size: large;
-    margin: 0 50px;
+    margin-left: 200px;
+    margin-right: 50px;
+    text-align: justify;
 }
 
-/* Back to Top Button */
-#backToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    background-color: black;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-}
-
-/* Footer */
+/* Footer styles */
 footer {
     background-color: #ebeff3f3;
     color: black;
     text-align: center;
     padding: 50px;
-    margin-top: 20px;
     font-weight: bold;
 }
 
-.social-links a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 24px;
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .title-image img {
+        max-width: 80px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    .search-form button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
